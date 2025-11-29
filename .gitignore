@@ -1,0 +1,58 @@
+# Node
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary or backup files
+*.tmp
+*.temp
+*.bak
+~* 
+
+# OneDrive/Windows temporary files
+~$*
+*.lnk
+
+# Ignore the root style.css duplicate if you intentionally use CSS/style.css
+# (Uncomment the line below if you want to ignore the root-level duplicate)
+# style.css
+
+# Ignore Visual Studio Code workspace storage
+.vscode/*-workspace
+
+# Ignore Mac and Linux files
+*.swp
+
+# Exclude secrets or env files
+.env
+.env.*
+
+# Keep .gitignore tracked
