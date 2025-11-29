@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Church Logo">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="give.html">Give</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="give">
+        <h2>Support Our Ministry</h2>
+        <p>Your generous contributions help us continue our mission of spreading love, hope, and faith to the community.</p>
+        <p>No online payment yet. You can donate in person or contact us for guidance.</p>
+    </section>
+</main>
+
+<footer>
+<p>&copy; 2025 Our Church. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* ================= General Reset ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/* ================= Header ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #004080;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+header.scrolled {
+    background-color: #003366;
+}
+
+header .logo img {
+    width: 120px;
+    height: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* ================= Main ================= */
+main {
+    padding: 2rem 1rem;
+}
+
+/* ---------------- Hero Section ---------------- */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 8vw 2vw;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4); /* semi-transparent overlay */
+    z-index:1;
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index:2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.3s;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    animation-delay: 0.6s;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Hero fade-in animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------- Buttons ---------------- */
+.button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, #004080, #0066cc);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------------- Give Section ---------------- */
+.give {
+    text-align: center;
+    padding: 5vw 2vw;
+    background-color: #e6f0ff;
+    margin: 4vw 0;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.give:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.give h2 {
+    margin-bottom: 1rem;
+    color: #004080;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.give p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+}
+
+/* ---------------- Events Section ---------------- */
+.events-preview {
+    padding: 4vw 2vw;
+    text-align: center;
+}
+
+.events-preview h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.event-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: clamp(180px, 25%, 220px);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    background-color: #e6f0ff;
+}
+
+/* ---------------- About Section ---------------- */
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 2vw;
+}
+
+.about-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.about-content p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.7;
+}
+
+/* ---------------- Live Section ---------------- */
+.live-content {
+    text-align: center;
+    padding: 2vw;
+}
+
+.live-content iframe {
+    width: 80%;
+    max-width: 800px;
+    height: clamp(300px, 40vw, 450px);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.live-content iframe:hover {
+    transform: scale(1.02);
+}
+
+/* ---------------- Contact Section ---------------- */
+.contact-content {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    padding: 2vw;
+}
+
+.contact-content h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.contact-content p, .contact-content a {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #004080;
+    text-decoration: none;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.contact-content a:hover {
+    text-decoration: underline;
+}
+
+/* ================= Footer ================= */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #004080;
+    color: #fff;
+    margin-top: 4vw;
+}
+
+/* ================= Responsive ================= */
+@media screen and (max-width: 992px) {
+    header {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #004080;
+        width: 200px;
+        display: none;
+        padding: 1rem 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
